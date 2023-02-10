@@ -15,4 +15,6 @@ FROM nginx:1.21.0-alpine
 # Copy built source code into Nginx directory
 COPY --from=build /build /usr/share/nginx/html
 # Containers run nginx with global directives and daemon off
+EXPOSE 80
+
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
